@@ -6,6 +6,7 @@ import Menu from '../../components/Menu';
 import LinkItem from '../../components/LinkItem';
 import api from '../../services/api'
 import { saveLink } from '../../services/storeLinks'
+import Footer from '../../components/Footer';
 
 export default function Home() {
     const [link, setLink] = useState('');
@@ -23,7 +24,7 @@ export default function Home() {
             saveLink('@encurtalink', response.data)
             setLink('')
         } catch {
-            alert('Parece que algo deu errado!')
+            alert('Copie é cole seu link aqui!')
         }
     }
     return (
@@ -49,13 +50,15 @@ export default function Home() {
             </div>
 
             <Menu />
+
             {showModal && (
                 <LinkItem
                     closeModal={() => setShowModal(false)}
                     content={data}
                 />
-
             )}
+            <Footer />
+
         </div>
     )
 }

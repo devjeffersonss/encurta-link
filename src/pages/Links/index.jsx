@@ -20,7 +20,7 @@ export default function Links() {
         async function getLinks() {
             const result = await getLinksSave('@encurtalink')
 
-            if (result.lenght === 0) {
+            if (result.length === 0) {
                 // Nossa lista está vazia
                 setEmptyList(true);
             }
@@ -58,12 +58,14 @@ export default function Links() {
                 <h1>Meus links</h1>
             </div>
 
-            {emptyList && (
-                < div className='links-item'>
-                    <h2 className='empty-text'>Sua lista está vazia...</h2>
-                </div>
+            {
 
-            )
+                emptyList && (
+                    < div className='links-item'>
+                        <h2 className='empty-text'>Sua lista está vazia...</h2>
+                    </div>
+
+                )
             }
 
 
