@@ -1,9 +1,10 @@
 .menu {
+    right: 10em;
     position: absolute;
-    top: 20px;
-    right: 10%;
+    top: 25px;
     font-weight: bold;
     display: flex;
+    gap: 10px;
 }
 
 .menu a {
@@ -30,4 +31,16 @@
 
 .menu-item:hover {
     transform: scale(1.10);
+}
+
+@media (max-width: 715px) {
+    .menu {
+
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
 }
